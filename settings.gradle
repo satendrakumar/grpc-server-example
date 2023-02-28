@@ -1,0 +1,4 @@
+rootProject.name = 'grpc-server-example'
+include 'src:main:proto'
+findProject(':src:main:proto')?.name = 'proto'
+

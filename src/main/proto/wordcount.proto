@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "edu.grpc.server.wordcount";
+option java_outer_classname = "WordCountProto";
+option objc_class_prefix = "HLW";
+
+package wordcount;
+
+service WordCountService {
+  rpc GetWordCount (WordCountRequest) returns (WordCountResponse) {}
+
+}
+
+message WordCountRequest {
+  string text = 1;
+}
+
+message WordCountResponse{
+  map<string, int64> wordCounts = 1;
+}
